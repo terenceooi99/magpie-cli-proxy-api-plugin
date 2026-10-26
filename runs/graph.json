@@ -1,0 +1,597 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-10-26T16:20:55.143Z",
+  "sources": [
+    "CLAUDE.md",
+    "AGENTS.md",
+    "README.md"
+  ],
+  "entities": [
+    {
+      "id": "sec_rtk_token_saver_rule_claude_",
+      "name": "RTK Token Saver Rule (claude)",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 2,
+      "evidence": "# RTK Token Saver Rule (claude)"
+    },
+    {
+      "id": "sec_rtk_rust_token_killer_optimization_rule",
+      "name": "RTK (Rust Token Killer) Optimization Rule",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 4,
+      "evidence": "## RTK (Rust Token Killer) Optimization Rule"
+    },
+    {
+      "id": "sec_output_token_optimization",
+      "name": "Output & Token Optimization",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 15,
+      "evidence": "### Output & Token Optimization"
+    },
+    {
+      "id": "sec_3_tier_hybrid_web_research_scraping_policy_upstream_fastcrw_crw_lightpanda_io_browser_",
+      "name": "3-Tier Hybrid Web Research & Scraping Policy (Upstream: fastcrw/crw & lightpanda-io/browser)",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 21,
+      "evidence": "## 3-Tier Hybrid Web Research & Scraping Policy (Upstream: fastcrw/crw & lightpanda-io/browser)"
+    },
+    {
+      "id": "sec_mandatory_semantic_knowledge_graph_first_policy_token_saver_enforcement_",
+      "name": "Mandatory Semantic Knowledge Graph First Policy (Token Saver Enforcement)",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 34,
+      "evidence": "## Mandatory Semantic Knowledge Graph First Policy (Token Saver Enforcement)"
+    },
+    {
+      "id": "sec_1_code_based_files_codegraphcontext_upstream_codegraphcontext_codegraphcontext_",
+      "name": "1. Code-Based Files -> CodeGraphContext (Upstream: CodeGraphContext/CodeGraphContext)",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 37,
+      "evidence": "### 1. Code-Based Files -> CodeGraphContext (Upstream: CodeGraphContext/CodeGraphContext)"
+    },
+    {
+      "id": "ent_code_query_engine_",
+      "name": "Code Query Engine:",
+      "type": "Component/Requirement",
+      "description": "For all code architecture, symbol definitions, function signatures, call hierarchies (callers/callees), class inheritance, and module dependencies, AI agents MUST query the CodeGraphContext index (/co",
+      "source": "CLAUDE.md",
+      "line": 38,
+      "evidence": "- **Code Query Engine:** For all code architecture, symbol definitions, function signatures, call hierarchies (callers/callees), class inheritance, and module d"
+    },
+    {
+      "id": "ent_zero_waste_fallback_",
+      "name": "Zero-Waste Fallback:",
+      "type": "Component/Requirement",
+      "description": "NEVER dump or read entire source code files or directory trees into LLM prompt context when answering code questions. Only fall back to localized file reads (and then only targeted slices) if the know",
+      "source": "CLAUDE.md",
+      "line": 39,
+      "evidence": "- **Zero-Waste Fallback:** NEVER dump or read entire source code files or directory trees into LLM prompt context when answering code questions. Only fall back "
+    },
+    {
+      "id": "ent_live_synchronization_",
+      "name": "Live Synchronization:",
+      "type": "Component/Requirement",
+      "description": "The project code graph is continuously kept updated via background incremental sync / `cgc watch` / on-save triggers.",
+      "source": "CLAUDE.md",
+      "line": 40,
+      "evidence": "- **Live Synchronization:** The project code graph is continuously kept updated via background incremental sync / `cgc watch` / on-save triggers."
+    },
+    {
+      "id": "sec_2_non_code_files_jevgraph_upstream_chenmingtang830_jevgraph_",
+      "name": "2. Non-Code Files -> JevGraph (Upstream: chenmingtang830/jevgraph)",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 42,
+      "evidence": "### 2. Non-Code Files -> JevGraph (Upstream: chenmingtang830/jevgraph)"
+    },
+    {
+      "id": "ent_document_query_engine_only_",
+      "name": "Document Query Engine ONLY:",
+      "type": "Component/Requirement",
+      "description": "JevGraph is strictly designated for non-code files (documentation, Markdown specs, PRDs, PDFs, Word docs `.docx`, slides `.pptx`, text `.txt`).",
+      "source": "CLAUDE.md",
+      "line": 43,
+      "evidence": "- **Document Query Engine ONLY:** JevGraph is strictly designated for non-code files (documentation, Markdown specs, PRDs, PDFs, Word docs `.docx`, slides `.ppt"
+    },
+    {
+      "id": "ent_bounded_evidence_",
+      "name": "Bounded Evidence:",
+      "type": "Component/Requirement",
+      "description": "When ingesting large specs, PRDs, PDFs, or architectural documentation, build or query bounded evidence-backed knowledge graphs (/jevgraph-build, /jevgraph-query) with character-level page maps instea",
+      "source": "CLAUDE.md",
+      "line": 44,
+      "evidence": "- **Bounded Evidence:** When ingesting large specs, PRDs, PDFs, or architectural documentation, build or query bounded evidence-backed knowledge graphs (/jevgra"
+    },
+    {
+      "id": "ent_strict_separation_",
+      "name": "Strict Separation:",
+      "type": "Component/Requirement",
+      "description": "NEVER use JevGraph for source code AST indexing; code files are strictly handled by CodeGraphContext.",
+      "source": "CLAUDE.md",
+      "line": 45,
+      "evidence": "- **Strict Separation:** NEVER use JevGraph for source code AST indexing; code files are strictly handled by CodeGraphContext."
+    },
+    {
+      "id": "sec_headroom_context_compression_upstream_headroomlabs_ai_headroom_",
+      "name": "Headroom Context Compression (Upstream: headroomlabs-ai/headroom)",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 48,
+      "evidence": "## Headroom Context Compression (Upstream: headroomlabs-ai/headroom)"
+    },
+    {
+      "id": "sec_anti_slop_filter_quality_rules_upstream_miqdadbadjuber_anti_slop_",
+      "name": "Anti-Slop Filter & Quality Rules (Upstream: miqdadbadjuber/anti-slop)",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 52,
+      "evidence": "## Anti-Slop Filter & Quality Rules (Upstream: miqdadbadjuber/anti-slop)"
+    },
+    {
+      "id": "ent_filter_not_style_guide_",
+      "name": "Filter, Not Style Guide:",
+      "type": "Component/Requirement",
+      "description": "Run purpose tests before aesthetic choices (reject ungrounded neon glows, fake metrics, generic sparkle badges).",
+      "source": "CLAUDE.md",
+      "line": 54,
+      "evidence": "- **Filter, Not Style Guide:** Run purpose tests before aesthetic choices (reject ungrounded neon glows, fake metrics, generic sparkle badges)."
+    },
+    {
+      "id": "ent_liveliness_grounding_",
+      "name": "Liveliness & Grounding:",
+      "type": "Component/Requirement",
+      "description": "Rely on `DESIGN.md` or explicit brief for design soul; enforce WCAG AA human accessibility.",
+      "source": "CLAUDE.md",
+      "line": 55,
+      "evidence": "- **Liveliness & Grounding:** Rely on `DESIGN.md` or explicit brief for design soul; enforce WCAG AA human accessibility."
+    },
+    {
+      "id": "ent_dedicated_skills_",
+      "name": "Dedicated Skills:",
+      "type": "Component/Requirement",
+      "description": "Read `skills/antislop/SKILL.md` (core), `skills/antislop-ui/SKILL.md`, `skills/antislop-copywriting/SKILL.md`, `skills/antislop-human/SKILL.md`, `skills/antislop-layoutmobile/SKILL.md`, `skills/antisl",
+      "source": "CLAUDE.md",
+      "line": 56,
+      "evidence": "- **Dedicated Skills:** Read `skills/antislop/SKILL.md` (core), `skills/antislop-ui/SKILL.md`, `skills/antislop-copywriting/SKILL.md`, `skills/antislop-human/SK"
+    },
+    {
+      "id": "sec_output_generation_token_saver_rule_ponytail_mode_full_",
+      "name": "Output & Generation Token Saver Rule (Ponytail Mode: FULL)",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 59,
+      "evidence": "## Output & Generation Token Saver Rule (Ponytail Mode: FULL)"
+    },
+    {
+      "id": "ent_yagni_shortest_diff_",
+      "name": "YAGNI & Shortest Diff:",
+      "type": "Component/Requirement",
+      "description": "Only write code that must exist. Reach for standard library before custom code or new dependencies. Shortest working diff wins.",
+      "source": "CLAUDE.md",
+      "line": 60,
+      "evidence": "- **YAGNI & Shortest Diff:** Only write code that must exist. Reach for standard library before custom code or new dependencies. Shortest working diff wins."
+    },
+    {
+      "id": "ent_terse_responses_",
+      "name": "Terse Responses:",
+      "type": "Component/Requirement",
+      "description": "Code first. At most 3 short lines of explanation: what was skipped, when to add it. No essays, no unsolicited design tours, no feature walkthroughs.",
+      "source": "CLAUDE.md",
+      "line": 61,
+      "evidence": "- **Terse Responses:** Code first. At most 3 short lines of explanation: what was skipped, when to add it. No essays, no unsolicited design tours, no feature wa"
+    },
+    {
+      "id": "sec_terse_agent_directives",
+      "name": "Terse Agent Directives",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 63,
+      "evidence": "## Terse Agent Directives"
+    },
+    {
+      "id": "sec_context_optimization_compact_diffs_outlines_",
+      "name": "Context Optimization (Compact Diffs & Outlines)",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 67,
+      "evidence": "## Context Optimization (Compact Diffs & Outlines)"
+    },
+    {
+      "id": "sec_ecc_context_management_compaction_protocol_upstream_affaan_m_ecc_",
+      "name": "ECC Context Management & Compaction Protocol (Upstream: affaan-m/ECC)",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 71,
+      "evidence": "## ECC Context Management & Compaction Protocol (Upstream: affaan-m/ECC)"
+    },
+    {
+      "id": "sec_upstream_engine_integration_latency_guardrails_standards",
+      "name": "Upstream Engine Integration & Latency Guardrails Standards",
+      "type": "Section/Module",
+      "description": "Specification section from CLAUDE.md",
+      "source": "CLAUDE.md",
+      "line": 77,
+      "evidence": "## Upstream Engine Integration & Latency Guardrails Standards"
+    },
+    {
+      "id": "sec_rtk_token_saver_rule_agents_",
+      "name": "RTK Token Saver Rule (agents)",
+      "type": "Section/Module",
+      "description": "Specification section from AGENTS.md",
+      "source": "AGENTS.md",
+      "line": 2,
+      "evidence": "# RTK Token Saver Rule (agents)"
+    },
+    {
+      "id": "sec_magpie_cliproxyapi_plugin",
+      "name": "Magpie CLIProxyAPI Plugin",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 1,
+      "evidence": "# Magpie CLIProxyAPI Plugin"
+    },
+    {
+      "id": "sec_overview",
+      "name": "Overview",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 13,
+      "evidence": "## Overview"
+    },
+    {
+      "id": "sec_key_highlights",
+      "name": "Key Highlights",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 34,
+      "evidence": "### Key Highlights"
+    },
+    {
+      "id": "ent_universal_software_compatibility",
+      "name": "Universal Software Compatibility",
+      "type": "Component/Requirement",
+      "description": "Connect any client or IDE that supports OpenAI-compatible or Claude-compatible endpoints.",
+      "source": "README.md",
+      "line": 35,
+      "evidence": "- **Universal Software Compatibility**: Connect any client or IDE that supports OpenAI-compatible or Claude-compatible endpoints."
+    },
+    {
+      "id": "ent_automated_lifecycle_supervision",
+      "name": "Automated Lifecycle Supervision",
+      "type": "Component/Requirement",
+      "description": "Automatically starts with Magpie and terminates immediately upon quitting Magpie via an internal termination watchdog, preventing orphaned background processes.",
+      "source": "README.md",
+      "line": 36,
+      "evidence": "- **Automated Lifecycle Supervision**: Automatically starts with Magpie and terminates immediately upon quitting Magpie via an internal termination watchdog, pr"
+    },
+    {
+      "id": "ent_auto_download_cross_platform",
+      "name": "Auto-Download & Cross-Platform",
+      "type": "Component/Requirement",
+      "description": "Automatically fetches and verifies official SHA-256 binary releases for Windows (`x64`/`arm64`), macOS (`Apple Silicon`/`Intel`), and Linux (`x64`/`arm64`).",
+      "source": "README.md",
+      "line": 37,
+      "evidence": "- **Auto-Download & Cross-Platform**: Automatically fetches and verifies official SHA-256 binary releases for Windows (`x64`/`arm64`), macOS (`Apple Silicon`/`I"
+    },
+    {
+      "id": "ent_easycliproxyapi_integration",
+      "name": "EasyCLIProxyAPI Integration",
+      "type": "Component/Requirement",
+      "description": "Seamlessly works alongside [EasyCLIProxyAPI](https://github.com/router-for-me/EasyCLIProxyAPI), auto-registering client profiles for the **Agent Configuration** tab.",
+      "source": "README.md",
+      "line": 38,
+      "evidence": "- **EasyCLIProxyAPI Integration**: Seamlessly works alongside [EasyCLIProxyAPI](https://github.com/router-for-me/EasyCLIProxyAPI), auto-registering client profi"
+    },
+    {
+      "id": "ent_embedded_web_dashboard",
+      "name": "Embedded Web Dashboard",
+      "type": "Component/Requirement",
+      "description": "Dedicated visual control panel inside Magpie Desktop with live traffic monitoring, detected client indicators, copy buttons with fallback, and weekly auto-update checks.",
+      "source": "README.md",
+      "line": 39,
+      "evidence": "- **Embedded Web Dashboard**: Dedicated visual control panel inside Magpie Desktop with live traffic monitoring, detected client indicators, copy buttons with f"
+    },
+    {
+      "id": "sec_supported_clients_software",
+      "name": "Supported Clients & Software",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 43,
+      "evidence": "## Supported Clients & Software"
+    },
+    {
+      "id": "sec_setup_for_different_magpie_conditions",
+      "name": "Setup for Different Magpie Conditions",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 59,
+      "evidence": "## Setup for Different Magpie Conditions"
+    },
+    {
+      "id": "sec_condition_1_default_setup_zero_configuration_",
+      "name": "Condition 1: Default Setup (Zero Configuration)",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 63,
+      "evidence": "### Condition 1: Default Setup (Zero Configuration)"
+    },
+    {
+      "id": "sec_condition_2_custom_magpie_host_port_or_network_gateway",
+      "name": "Condition 2: Custom Magpie Host, Port, or Network Gateway",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 79,
+      "evidence": "### Condition 2: Custom Magpie Host, Port, or Network Gateway"
+    },
+    {
+      "id": "sec_condition_3_custom_local_proxy_port",
+      "name": "Condition 3: Custom Local Proxy Port",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 94,
+      "evidence": "### Condition 3: Custom Local Proxy Port"
+    },
+    {
+      "id": "sec_condition_4_offline_air_gapped_environment_pre_installed_binary_",
+      "name": "Condition 4: Offline / Air-Gapped Environment (Pre-Installed Binary)",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 108,
+      "evidence": "### Condition 4: Offline / Air-Gapped Environment (Pre-Installed Binary)"
+    },
+    {
+      "id": "sec_condition_5_easycliproxyapi_integration_router_for_me_easycliproxyapi_",
+      "name": "Condition 5: EasyCLIProxyAPI Integration (router-for-me/EasyCLIProxyAPI)",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 124,
+      "evidence": "### Condition 5: EasyCLIProxyAPI Integration (`router-for-me/EasyCLIProxyAPI`)"
+    },
+    {
+      "id": "sec_code_examples",
+      "name": "Code Examples",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 142,
+      "evidence": "## Code Examples"
+    },
+    {
+      "id": "sec_python_openai_sdk_",
+      "name": "Python (OpenAI SDK)",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 144,
+      "evidence": "### Python (OpenAI SDK)"
+    },
+    {
+      "id": "sec_node_js_typescript_openai_sdk_",
+      "name": "Node.js / TypeScript (OpenAI SDK)",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 161,
+      "evidence": "### Node.js / TypeScript (OpenAI SDK)"
+    },
+    {
+      "id": "sec_curl",
+      "name": "cURL",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 178,
+      "evidence": "### cURL"
+    },
+    {
+      "id": "sec_options_reference",
+      "name": "Options Reference",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 191,
+      "evidence": "## Options Reference"
+    },
+    {
+      "id": "sec_testing",
+      "name": "Testing",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 214,
+      "evidence": "## Testing"
+    },
+    {
+      "id": "sec_contributing",
+      "name": "Contributing",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 226,
+      "evidence": "## Contributing"
+    },
+    {
+      "id": "sec_author_tipping",
+      "name": "Author & Tipping",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 232,
+      "evidence": "## Author & Tipping"
+    },
+    {
+      "id": "sec_license",
+      "name": "License",
+      "type": "Section/Module",
+      "description": "Specification section from README.md",
+      "source": "README.md",
+      "line": 244,
+      "evidence": "## License"
+    }
+  ],
+  "relations": [
+    {
+      "source": "sec_1_code_based_files_codegraphcontext_upstream_codegraphcontext_codegraphcontext_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_code_query_engine_",
+      "evidence": "- **Code Query Engine:** For all code architecture, symbol definitions, function signatures, call hierarchies (callers/callees), class inheritance, and module d",
+      "source_file": "CLAUDE.md",
+      "line": 38
+    },
+    {
+      "source": "sec_1_code_based_files_codegraphcontext_upstream_codegraphcontext_codegraphcontext_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_zero_waste_fallback_",
+      "evidence": "- **Zero-Waste Fallback:** NEVER dump or read entire source code files or directory trees into LLM prompt context when answering code questions. Only fall back ",
+      "source_file": "CLAUDE.md",
+      "line": 39
+    },
+    {
+      "source": "sec_1_code_based_files_codegraphcontext_upstream_codegraphcontext_codegraphcontext_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_live_synchronization_",
+      "evidence": "- **Live Synchronization:** The project code graph is continuously kept updated via background incremental sync / `cgc watch` / on-save triggers.",
+      "source_file": "CLAUDE.md",
+      "line": 40
+    },
+    {
+      "source": "sec_2_non_code_files_jevgraph_upstream_chenmingtang830_jevgraph_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_document_query_engine_only_",
+      "evidence": "- **Document Query Engine ONLY:** JevGraph is strictly designated for non-code files (documentation, Markdown specs, PRDs, PDFs, Word docs `.docx`, slides `.ppt",
+      "source_file": "CLAUDE.md",
+      "line": 43
+    },
+    {
+      "source": "sec_2_non_code_files_jevgraph_upstream_chenmingtang830_jevgraph_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_bounded_evidence_",
+      "evidence": "- **Bounded Evidence:** When ingesting large specs, PRDs, PDFs, or architectural documentation, build or query bounded evidence-backed knowledge graphs (/jevgra",
+      "source_file": "CLAUDE.md",
+      "line": 44
+    },
+    {
+      "source": "sec_2_non_code_files_jevgraph_upstream_chenmingtang830_jevgraph_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_strict_separation_",
+      "evidence": "- **Strict Separation:** NEVER use JevGraph for source code AST indexing; code files are strictly handled by CodeGraphContext.",
+      "source_file": "CLAUDE.md",
+      "line": 45
+    },
+    {
+      "source": "sec_anti_slop_filter_quality_rules_upstream_miqdadbadjuber_anti_slop_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_filter_not_style_guide_",
+      "evidence": "- **Filter, Not Style Guide:** Run purpose tests before aesthetic choices (reject ungrounded neon glows, fake metrics, generic sparkle badges).",
+      "source_file": "CLAUDE.md",
+      "line": 54
+    },
+    {
+      "source": "sec_anti_slop_filter_quality_rules_upstream_miqdadbadjuber_anti_slop_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_liveliness_grounding_",
+      "evidence": "- **Liveliness & Grounding:** Rely on `DESIGN.md` or explicit brief for design soul; enforce WCAG AA human accessibility.",
+      "source_file": "CLAUDE.md",
+      "line": 55
+    },
+    {
+      "source": "sec_anti_slop_filter_quality_rules_upstream_miqdadbadjuber_anti_slop_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_dedicated_skills_",
+      "evidence": "- **Dedicated Skills:** Read `skills/antislop/SKILL.md` (core), `skills/antislop-ui/SKILL.md`, `skills/antislop-copywriting/SKILL.md`, `skills/antislop-human/SK",
+      "source_file": "CLAUDE.md",
+      "line": 56
+    },
+    {
+      "source": "sec_output_generation_token_saver_rule_ponytail_mode_full_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_yagni_shortest_diff_",
+      "evidence": "- **YAGNI & Shortest Diff:** Only write code that must exist. Reach for standard library before custom code or new dependencies. Shortest working diff wins.",
+      "source_file": "CLAUDE.md",
+      "line": 60
+    },
+    {
+      "source": "sec_output_generation_token_saver_rule_ponytail_mode_full_",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_terse_responses_",
+      "evidence": "- **Terse Responses:** Code first. At most 3 short lines of explanation: what was skipped, when to add it. No essays, no unsolicited design tours, no feature wa",
+      "source_file": "CLAUDE.md",
+      "line": 61
+    },
+    {
+      "source": "sec_key_highlights",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_universal_software_compatibility",
+      "evidence": "- **Universal Software Compatibility**: Connect any client or IDE that supports OpenAI-compatible or Claude-compatible endpoints.",
+      "source_file": "README.md",
+      "line": 35
+    },
+    {
+      "source": "sec_key_highlights",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_automated_lifecycle_supervision",
+      "evidence": "- **Automated Lifecycle Supervision**: Automatically starts with Magpie and terminates immediately upon quitting Magpie via an internal termination watchdog, pr",
+      "source_file": "README.md",
+      "line": 36
+    },
+    {
+      "source": "sec_key_highlights",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_auto_download_cross_platform",
+      "evidence": "- **Auto-Download & Cross-Platform**: Automatically fetches and verifies official SHA-256 binary releases for Windows (`x64`/`arm64`), macOS (`Apple Silicon`/`I",
+      "source_file": "README.md",
+      "line": 37
+    },
+    {
+      "source": "sec_key_highlights",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_easycliproxyapi_integration",
+      "evidence": "- **EasyCLIProxyAPI Integration**: Seamlessly works alongside [EasyCLIProxyAPI](https://github.com/router-for-me/EasyCLIProxyAPI), auto-registering client profi",
+      "source_file": "README.md",
+      "line": 38
+    },
+    {
+      "source": "sec_key_highlights",
+      "relation": "DEFINES_REQUIREMENT",
+      "target": "ent_embedded_web_dashboard",
+      "evidence": "- **Embedded Web Dashboard**: Dedicated visual control panel inside Magpie Desktop with live traffic monitoring, detected client indicators, copy buttons with f",
+      "source_file": "README.md",
+      "line": 39
+    }
+  ],
+  "stats": {
+    "total_sources": 3,
+    "total_entities": 50,
+    "total_relations": 16,
+    "token_savings_estimate": "85-95%"
+  }
+}

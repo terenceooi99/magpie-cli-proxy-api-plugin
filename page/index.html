@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLIProxyAPI Bridge</title>
+<link rel="stylesheet" href="style.css">
+<script src="_magpie/bridge.js"></script>
+<script src="view.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="top-bar">
+  <div>
+    <h1 data-t="title">CLIProxyAPI Bridge</h1>
+    <p class="subtitle" id="main-subtitle" data-t="subtitle">VS Code GitHub Copilot ➔ CLIProxyAPI ➔ Magpie Gateway</p>
+  </div>
+  <div class="top-actions">
+    <div class="update-widget" id="update-widget">
+      <button type="button" class="btn-update" id="btn-update" title="Click to check or install CLIProxyAPI updates">
+        <span class="update-icon" id="update-icon">↻</span>
+        <span id="update-btn-text" data-t="updateBtn">Check for Updates</span>
+      </button>
+      <span class="update-status-pill" id="update-status-pill" hidden></span>
+    </div>
+    <div class="seg" role="tablist" id="periods">
+      <button type="button" role="tab" data-period="today" data-t="today">Today</button>
+      <button type="button" role="tab" data-period="7d" data-t="7d">7 days</button>
+      <button type="button" role="tab" data-period="30d" data-t="30d">30 days</button>
+    </div>
+  </div>
+</header>
+
+<section class="pipeline-card">
+  <div class="pipeline-flow">
+    <!-- Dynamic client node with dropdown -->
+    <div class="node node-client-dropdown-container" id="node-client-container">
+      <div class="client-badge-wrapper" id="client-badge-wrapper" role="button" tabindex="0" title="Click to view connected software">
+        <span class="node-label" id="client-primary-name">VS Code GitHub Copilot</span>
+        <span class="client-count-pill" id="client-count-pill" hidden>+0</span>
+        <span class="dropdown-chevron">▾</span>
+      </div>
+      <code id="flow-client">Custom Endpoint ("Magpie")</code>
+
+      <div class="client-dropdown-menu" id="client-dropdown-menu" hidden>
+        <div class="dropdown-header" data-t="clientsTitle">Connected Clients & Software</div>
+        <ul class="client-list" id="client-list">
+          <!-- Dynamically populated -->
+        </ul>
+      </div>
+    </div>
+
+    <div class="arrow">➔</div>
+    <div class="node active">
+      <span class="node-label" data-t="nodeProxy">CLIProxyAPI (Plugin)</span>
+      <code id="flow-cpa">http://127.0.0.1:8080/v1</code>
+    </div>
+    <div class="arrow">➔</div>
+    <div class="node">
+      <span class="node-label" data-t="nodeMagpie">Your Magpie Gateway</span>
+      <code id="flow-magpie">http://127.0.0.1:3425/v1</code>
+    </div>
+  </div>
+</section>
+
+<section class="tiles" id="tiles"></section>
+
+<div class="grid-two">
+  <section class="card snippet-highlight-card">
+    <div class="card-head">
+      <h2 data-t="snippetCustomEndpoint">VS Code Custom Endpoint (Recommended)</h2>
+      <button type="button" class="copy-btn primary-copy" data-copy="code-custom-endpoint" data-t="copyBtn">Copy JSON</button>
+    </div>
+    <p class="hint" data-t="snippetCustomEndpointHint">Paste into your VS Code Copilot custom endpoints array in settings.json:</p>
+    <pre id="code-custom-endpoint" class="endpoint-pre"></pre>
+
+    <div class="snippet-block sub-block">
+      <div class="snippet-head">
+        <div class="sdk-header-left">
+          <span data-t="snippetSdk">OpenAI SDK via CLIProxyAPI</span>
+          <div class="sdk-tabs" id="sdk-tabs">
+            <button type="button" class="sdk-tab active" data-lang="js" data-t="tabJs">Node.js</button>
+            <button type="button" class="sdk-tab" data-lang="python" data-t="tabPython">Python</button>
+            <button type="button" class="sdk-tab" data-lang="curl" data-t="tabCurl">cURL</button>
+          </div>
+        </div>
+        <button type="button" class="copy-btn" data-copy="code-sdk" data-t="copyBtn">Copy</button>
+      </div>
+      <pre id="code-sdk"></pre>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 data-t="configTitle">Bridge Configuration</h2>
+    <p class="hint" data-t="configHint">Changes automatically save to Magpie and reload the managed CLIProxyAPI server.</p>
+    <form id="config-form" autocomplete="off">
+      <div class="field-row">
+        <label>
+          <span data-t="hostLabel">CLIProxyAPI Host</span>
+          <input type="text" id="opt-host" placeholder="127.0.0.1">
+        </label>
+        <label>
+          <span data-t="portLabel">CLIProxyAPI Port</span>
+          <input type="number" id="opt-port" min="1" max="65535" placeholder="8080">
+        </label>
+      </div>
+
+      <div class="field-row">
+        <label>
+          <span data-t="magpieUrlLabel">Magpie Gateway Base URL</span>
+          <input type="text" id="opt-magpieBaseUrl" placeholder="http://127.0.0.1:3425/v1">
+        </label>
+        <label>
+          <span data-t="magpieKeyLabel">Magpie API Key</span>
+          <input type="text" id="opt-magpieApiKey" placeholder="magpie">
+        </label>
+      </div>
+
+      <label class="models-input-label">
+        <span data-t="extraModelsLabel">Configured Magpie Models (one per line or comma-separated)</span>
+        <p class="hint" data-t="extraModelsHint">Live gateway models auto-detect when Magpie runs. You can also manually list your models below:</p>
+        <textarea id="opt-extraModels" rows="4" placeholder="group/gpt-6.1-sol&#10;group/free-model-magpie"></textarea>
+      </label>
+
+      <div class="checks">
+        <label class="check">
+          <input type="checkbox" id="opt-autoStart" checked>
+          <span data-t="autoStartLabel">Auto-start CLIProxyAPI with Magpie (auto-stops when Magpie exits)</span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="opt-autoDownload" checked>
+          <span data-t="autoDownloadLabel">Auto-download CLIProxyAPI binary if missing</span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="opt-syncAll" checked>
+          <span data-t="syncAllLabel">Expose all detected Magpie models in CLIProxyAPI</span>
+        </label>
+      </div>
+
+      <p class="save-state" id="save-state" hidden></p>
+    </form>
+  </section>
+</div>
+
+<p class="error" id="error" hidden></p>
+</body>
+</html>

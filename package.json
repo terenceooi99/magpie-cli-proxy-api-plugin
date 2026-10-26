@@ -1,0 +1,93 @@
+{
+  "name": "magpie-cli-proxy-api-plugin",
+  "version": "0.1.0",
+  "description": "Universal CLIProxyAPI embedder for Magpie Desktop. Bridges any AI agent, IDE, terminal coding client, or OpenAI-compatible tool to Magpie and EasyCLIProxyAPI.",
+  "type": "module",
+  "main": "./index.mjs",
+  "author": "Terence Ooi Teng Wei (@terenceooit)",
+  "license": "MIT",
+  "homepage": "https://github.com/terenceooit/magpie-cli-proxy-api-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/terenceooit/magpie-cli-proxy-api-plugin.git"
+  },
+  "files": [
+    "index.mjs",
+    "provider.mjs",
+    "daemon.mjs",
+    "management.mjs",
+    "models.mjs",
+    "page",
+    "README.md",
+    "CONTRIBUTING.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "magpie",
+    "magpie-plugin",
+    "cliproxyapi",
+    "easycliproxyapi",
+    "opencode",
+    "opencode-plugin",
+    "ai-gateway",
+    "agent-configuration",
+    "proxy",
+    "developer-tools"
+  ],
+  "scripts": {
+    "test": "node --test test/plugin.test.mjs"
+  },
+  "magpie": {
+    "icon": "page/icon.svg",
+    "maxConcurrency": 16,
+    "page": {
+      "title": "CLIProxyAPI",
+      "titles": {
+        "zh": "CLIProxyAPI 代理",
+        "zh-TW": "CLIProxyAPI 代理",
+        "ja": "CLIProxyAPI"
+      },
+      "file": "page/index.html",
+      "icon": "page/icon.svg"
+    },
+    "permissions": [
+      "usage:summary",
+      "providers:list"
+    ],
+    "options": {
+      "autoStart": true,
+      "autoDownload": true,
+      "host": "127.0.0.1",
+      "port": 8080,
+      "magpieBaseUrl": "http://127.0.0.1:3425/v1",
+      "magpieApiKey": "magpie",
+      "defaultModel": "group/gpt-6.1-sol",
+      "extraModels": [
+        "group/gpt-6.1-sol",
+        "group/free-model-magpie"
+      ],
+      "syncAllMagpieModels": true,
+      "copilotAliases": [
+        "gpt-4o",
+        "gpt-4",
+        "gpt-4.1",
+        "claude-3-5-sonnet",
+        "copilot-chat"
+      ],
+      "clientApiKeys": [
+        "magpie"
+      ],
+      "managementKey": "magpie-cpa-mgmt",
+      "routingStrategy": "round-robin",
+      "requestRetry": 3,
+      "sessionAffinity": true,
+      "proxyUrl": "",
+      "binaryPath": "",
+      "configPath": "",
+      "authDir": "",
+      "easyCliProxyApi": false,
+      "easyCliProxyApiPort": 8317,
+      "autoRegisterVsCode": false
+    }
+  }
+}
