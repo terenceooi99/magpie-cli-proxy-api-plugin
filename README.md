@@ -8,6 +8,10 @@ Compatible with **[EasyCLIProxyAPI](https://github.com/router-for-me/EasyCLIProx
 [![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)](test/plugin.test.mjs)
 [![Tip: Wise](https://img.shields.io/badge/Tip-Wise-00b9ff.svg)](https://wise.com/pay/me/terenceooit)
 
+> [!NOTE]
+> **Current Status & Usage Notice**:
+> This plugin is currently not actively used in Magpie because Magpie already has its own built-in similar feature. However, it can still be utilized as a reliable fallback or guard for similar edge cases, proxy troubleshooting, or compatibility issues across external AI clients and coding tools.
+
 ---
 
 ## Overview
